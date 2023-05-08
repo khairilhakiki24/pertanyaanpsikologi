@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kuis Pertanyaan Psikologi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/js/bootstrap.bundle.min.js"></script>
+  <style>
+ body {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  background-color: #f8f9fa;
+}
+
+.container {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.form-check {
+  margin-bottom: 15px;
+}
+
+.form-check-input {
+  margin-right: 10px;
+  border: 2px solid #007bff;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+.form-check-input:hover {
+  background-color: #007bff;
+  color: #ffffff;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+  background-color: #0069d9;
+  border-color: #0062cc;
+}
+
+#result {
+  margin-top: 30px;
+}
+
+#result h4 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+#result-text {
+  font-size: 18px;
+}
+
+@media (max-width: 576px) {
+  h1 {
+    font-size: 24px;
+  }
+
+  .container {
+    padding: 15px;
+  }
+
+  .form-check-label {
+    font-size: 14px;
+  }
+
+  #result-text {
+    font-size: 16px;
+  }
+  
+}
+
+#next-question,
+#prev-question {
+  display: block;
+  background-color: #007bff;
+  color: #fff;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+  margin-top: 30px;
+}
+
+#next-question .btn-text,
+#prev-question .btn-text {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#next-question:hover,
+#prev-question:hover {
+  background-color: #0069d9;
+}
+
+  </style>
+</head>
+<body>
+	<div class="container mt-4">
+		<h1 class="mb-4">Pertanyaan 7</h1>
+		<p class="mb-4">Saat tersesat di hutan seharian, dan kelaparan, apa yang kamu lakukan ketika menemukan sebuah rumah yang terbuat dari permen?</p>
+		<form>
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="answer" id="a1" value="A_1">
+				<label class="form-check-label" for="a1">
+					a. Mulai makan apa saja yang terlihat di depan mata
+				</label>
+			</div>
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="answer" id="b1" value="B_1">
+					<label class="form-check-label" for="b1">
+						b. Wajib mencoba sebanyak mungkin permen yang ada
+					</label>
+			</div>
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="answer" id="c1" value="C_1">
+				<label class="form-check-label" for="c1">
+					c. Begitu menemukan permen kesukaan, baru kita mengisi perut
+				</label>
+			</div>
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="answer" id="d1" value="D_1">
+				<label class="form-check-label" for="d1">
+					d. Gawat..kita gak suka permen lebih suka keripik kentang
+				</label>
+			</div>
+			</div>
+			<button type="submit" class="btn btn-primary mt-3">Jawab</button>
+		</form>
+
+		<div class="mt-4" id="result" style="display:none">
+			<h4>Hasil:</h4>
+			<p id="result-text"></p>
+			<a href="pertanyaan8.html" class="btn btn-primary mt-3" id="next-question" style="display:none">Lanjut</a>
+			<a href="pertanyaan6.html" class="btn btn-primary mt-4" id="prev-question" style="display:none">Sebelumnya</a>
+
+</div>
+
+		</div>
+	</div>
+
+<script>
+	$(document).ready(function() {
+		$('form').submit(function(event) {
+			event.preventDefault();
+			var answer = $('input[name=answer]:checked').val();
+			if (answer == 'A_1') {
+				$('#result-text').text('Mulai makan apa saja yang terlihat di depan mata. Polos seperti anak kecil, sehingga mudah dimengerti dan diterima orang lain walaupun gampang ditipu juga');
+			} else if (answer == 'B_1') {
+				$('#result-text').text('Wajib mencoba sebanyak mungkin permen yang ada. keberatan bertemu banyak orang, tapi belum tentu bersedia berhubungan lebih dalam dengan seseorang');
+			} else if (answer == 'C_1') {
+				$('#result-text').text('Begitu menemukan permen kesukaan, baru kitra mengisi perut. membatasi diri, sudah cukup bila menemukan satu orang dengan minat dan selera yang sama.');
+			} else if (answer == 'D_1') {
+				$('#result-text').text('Gawat... kita gak suka permen lebih suka keripik kentang. berusaha terlihat berbeda termasuk dalam memilih teman.');
+			}
+			$('#result').show();
+			$('#next-question').show();
+			$('#prev-question').show();
+		});
+	});
+</script>
+
+
+</body>
+</html>

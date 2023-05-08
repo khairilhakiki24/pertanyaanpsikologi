@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kuis Pertanyaan Psikologi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/js/bootstrap.bundle.min.js"></script>
+   <style>
+ body {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  background-color: #f8f9fa;
+}
+
+.container {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.form-check {
+  margin-bottom: 15px;
+}
+
+.form-check-input {
+  margin-right: 10px;
+  border: 2px solid #007bff;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+.form-check-input:hover {
+  background-color: #007bff;
+  color: #ffffff;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+  background-color: #0069d9;
+  border-color: #0062cc;
+}
+
+#result {
+  margin-top: 30px;
+}
+
+#result h4 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+#result-text {
+  font-size: 18px;
+}
+
+@media (max-width: 576px) {
+  h1 {
+    font-size: 24px;
+  }
+
+  .container {
+    padding: 15px;
+  }
+
+  .form-check-label {
+    font-size: 14px;
+  }
+
+  #result-text {
+    font-size: 16px;
+  }
+  
+}
+
+#next-question,
+#prev-question {
+  display: block;
+  background-color: #007bff;
+  color: #fff;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+  margin-top: 30px;
+}
+
+#next-question .btn-text,
+#prev-question .btn-text {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#next-question:hover,
+#prev-question:hover {
+  background-color: #0069d9;
+}
+
+  </style>
+</head>
+<body>
+	<div class="container mt-4">
+		<h1 class="mb-4">Pertanyaan 1</h1>
+		<p class="mb-4">Suatu hari ada seekor burung berwarna biru tiba-tiba masuk ke rumah anda dan terperangkap didalamnya. anda pun berniat untuk memeliharanya. namun ada suatu keanehan yang terjadi pada burung tersebut. Akan berubah menjadi warna apakah burung tersebut di hari berikutnya?</p>
+		<form>
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="answer" id="a1" value="A_1">
+				<label class="form-check-label" for="a1">
+					a. Tetap Hitam
+				</label>
+			</div>
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="answer" id="b1" value="B_1">
+					<label class="form-check-label" for="b1">
+						b. Kembali menjadi warna biru
+					</label>
+			</div>
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="answer" id="c1" value="C_1">
+				<label class="form-check-label" for="c1">
+					c. Menjadi warna putih
+				</label>
+			</div>
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="answer" id="d1" value="D_1">
+				<label class="form-check-label" for="d1">
+					d. Menjadi warna emas
+				</label>
+			</div>
+			<button type="submit" class="btn btn-primary mt-3">Jawab</button>
+		</form>
+
+		<div class="mt-4" id="result" style="display:none">
+			<h4>Hasil:</h4>
+			<p id="result-text"></p>
+			<a href="pertanyaan2.html" class="btn btn-primary mt-3" id="next-question" style="display:none">
+  <span class="btn-text">Lanjut</span>
+</a>
+
+</div>
+
+		</div>
+	</div>
+
+<script>
+	$(document).ready(function() {
+		$('form').submit(function(event) {
+			event.preventDefault();
+			var answer = $('input[name=answer]:checked').val();
+			if (answer == 'A_1') {
+				$('#result-text').text('Biola membutuhkan gerakan jari yang sensitif dan sentuhan yang lembut untuk menghasilkan suara dari senar2nya. Anda melihat diri anda sendiri sedang menikmati kesadaran yang sama dan kemampuan mencari dan memainkan titik-titik paling sensitif pasangan anda. Ada rasa petualangan dalam menciptakan musik yang indah dengan tangan dengan terus memainkan not not yang serupa.');
+			} else if (answer == 'B_1') {
+				$('#result-text').text('Ada perasaan mendapatkan kekuatan dari memainkan bass yang besar dan menghasilkan erangan yang dahsyat. Dalam cinta, keahlian anda terletak pada kemampuan membuat pasangan anda mengikuti kehendak anda, memegang kendali sepenuhnya, membawa kekasih ke dalam kesenangan yang tidak pernah dibayangkan. Anda tidak pernah meminta ijin, tapi karakter itulah yang membuat anda sangat menarik.');
+			} else if (answer == 'C_1') {
+				$('#result-text').text('Tidak ada yang lain, mulut anda adalah senjata terkuat dari gudang senjata anda. Apakah membisikkan kata-kata cinta ke telinga pasangan atau menjelajahi kekasih dengan bibir.');
+			} else if (answer == 'D_1') {
+				$('#result-text').text('Suling membutuhkan kesabaran tinggi bagi yang menguasai dengan baik. Anda menunjukkan kesabaran yang sama dengan membuat letih pasangan dnegan ketekunan, tekad, dan stamina anda. Pasangan seringkali lengah ketika berpikir, bahwa itu hanya merupakan pertunjukan singkat tapi berubah menjadi konser utuh dalam enam gerakan.');
+			}
+			$('#result').show();
+			$('#next-question').show();
+		});
+	});
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kuis Pertanyaan Psikologi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/js/bootstrap.bundle.min.js"></script>
+   <style>
+ body {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  background-color: #f8f9fa;
+}
+
+.container {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.form-check {
+  margin-bottom: 15px;
+}
+
+.form-check-input {
+  margin-right: 10px;
+  border: 2px solid #007bff;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+.form-check-input:hover {
+  background-color: #007bff;
+  color: #ffffff;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+  background-color: #0069d9;
+  border-color: #0062cc;
+}
+
+#result {
+  margin-top: 30px;
+}
+
+#result h4 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+#result-text {
+  font-size: 18px;
+}
+
+@media (max-width: 576px) {
+  h1 {
+    font-size: 24px;
+  }
+
+  .container {
+    padding: 15px;
+  }
+
+  .form-check-label {
+    font-size: 14px;
+  }
+
+  #result-text {
+    font-size: 16px;
+  }
+  
+}
+
+#next-question,
+#prev-question {
+  display: block;
+  background-color: #007bff;
+  color: #fff;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+  margin-top: 30px;
+}
+
+#next-question .btn-text,
+#prev-question .btn-text {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#next-question:hover,
+#prev-question:hover {
+  background-color: #0069d9;
+}
+
+  </style>
+</head>
+<body>
+	<div class="container mt-4">
+		<h1 class="mb-4">Pertanyaan 3</h1>
+		<p class="mb-4">Anda berjalan di jalan, memikirkan hal hal lain, dan tersandung tong sampah di trotoar dan jatuh. Apa yang tumpah keluar dari tong sampah?
+</p>
+		<form>
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="answer" id="a1" value="A_1">
+				<label class="form-check-label" for="a1">
+					a. Tidak ada yang tumpah, tong sampah kosong
+				</label>
+			</div>
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="answer" id="b1" value="B_1">
+					<label class="form-check-label" for="b1">
+						b. Tumpukan sampah tumpah ke jalan
+					</label>
+			</div>
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="answer" id="c1" value="C_1">
+				<label class="form-check-label" for="c1">
+					c. Biji apel, tulang ayam dan sampah lainnya
+				</label>
+			</div>
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="answer" id="d1" value="D_1">
+				<label class="form-check-label" for="d1">
+					d. Plastik sampah yang terikat rapi
+
+				</label>
+			</div>
+			<button type="submit" class="btn btn-primary mt-3">Jawab</button>
+		</form>
+
+		<div class="mt-4" id="result" style="display:none">
+			<h4>Hasil:</h4>
+			<p id="result-text"></p>
+			<a href="pertanyaan4.html" class="btn btn-primary mt-3" id="next-question" style="display:none">Lanjut</a>
+			</br>
+			<a href="pertanyaan2.html" class="btn btn-primary mt-4" id="prev-question" style="display:none">Sebelumnya</a>
+
+</div>
+
+		</div>
+	</div>
+
+<script>
+	$(document).ready(function() {
+		$('form').submit(function(event) {
+			event.preventDefault();
+			var answer = $('input[name=answer]:checked').val();
+			if (answer == 'A_1') {
+				$('#result-text').text('Tidak ada yang tumpah tong sampah kosong. orang yang memberikan jawaban ini cenderung hidup tanpa menarik perhatian atau berpura pura. apa yang anda lihat itulah yang didapatkan. hanya kejujuran inilah yang membuatnya menarik');
+			} else if (answer == 'B_1') {
+				$('#result-text').text('Tumpukan sampah tumpah ke jalan. mereka yang berkata tong penuh dengan sampah mungkin kelihatannya bersikap jujur & terus terang kepada orang lain, tapi sebenarnya memiliki setumpuk perasaan tak terkatakan yang terkunci di dalam. anda mungkin memperhatikan perasaan ini sebagai frustasi biasa, tapi saat memikirkannya, bukankah ada saat dimana anda menahan sesuatu yang seharusnya dikatakan.');
+			} else if (answer == 'C_1') {
+				$('#result-text').text('Biji apel, tulang ayam dan sampah lainnya. orang yang membayangkan tumpukan sampah sisa makanan adlah orang yang menyembunyikan nafsu makan dan keinginan alamiah terhadap makanan. mungkin anda sedang (atau hanya menghindari) diet, atau masalahnya, hal itu sedang menekan anda. tidak perlu terlalu ekstrim melakukannya, karena mungkin akan membawa kebaikan bagi anda. untuk memakai uang untuk makan di restoran bersama teman.');
+			} else if (answer == 'D_1') {
+				$('#result-text').text('Plastik sampah yang terikat rapi. orang orang yang melihat plastik sampah yang terikat rapi memiliki rasa penguasaan diri yang kuat. mungkin terlalu kuat, anda tidak suka memperlihatkan kelemahan atau mengeluh - harga diri anda tidak mrngijinkan anda. tapi membiarkan orang lain mengetahui apa yang sebenarnya anda rasakan bukanlah tanda orang lemah. jangan terlalu tegang dan biarkan udara keterbukaan masuk sebelum semua sampah membusuk dan berbau busuk');
+			}
+			$('#result').show();
+			$('#next-question').show();
+			$('#prev-question').show();
+		});
+	});
+</script>
+
+
+</body>
+</html>

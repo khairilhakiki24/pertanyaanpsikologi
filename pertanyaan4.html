@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kuis Pertanyaan Psikologi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/js/bootstrap.bundle.min.js"></script>
+   <style>
+ body {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  background-color: #f8f9fa;
+}
+
+.container {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.form-check {
+  margin-bottom: 15px;
+}
+
+.form-check-input {
+  margin-right: 10px;
+  border: 2px solid #007bff;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+.form-check-input:hover {
+  background-color: #007bff;
+  color: #ffffff;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+  background-color: #0069d9;
+  border-color: #0062cc;
+}
+
+#result {
+  margin-top: 30px;
+}
+
+#result h4 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+#result-text {
+  font-size: 18px;
+}
+
+@media (max-width: 576px) {
+  h1 {
+    font-size: 24px;
+  }
+
+  .container {
+    padding: 15px;
+  }
+
+  .form-check-label {
+    font-size: 14px;
+  }
+
+  #result-text {
+    font-size: 16px;
+  }
+  
+}
+
+#next-question,
+#prev-question {
+  display: block;
+  background-color: #007bff;
+  color: #fff;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+  margin-top: 30px;
+}
+
+#next-question .btn-text,
+#prev-question .btn-text {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#next-question:hover,
+#prev-question:hover {
+  background-color: #0069d9;
+}
+
+  </style>
+</head>
+<body>
+	<div class="container mt-4">
+		<h1 class="mb-4">Pertanyaan 4</h1>
+		<p class="mb-4">Di suatu hari yang cerah, kamu sedang berjalan kaki kesuatu daerah yang belum pernah kamu kunjungi sebelumnya, dan terkagum kagum melihat sebuah rumah di seberangnya. Tapi, kenapa yah pintu depannya setengah terbuka? 
+</p>
+		<form>
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="answer" id="a1" value="A_1">
+				<label class="form-check-label" for="a1">
+					a. Jangan-jangan rumah itu dirampok
+				</label>
+			</div>
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="answer" id="b1" value="B_1">
+					<label class="form-check-label" for="b1">
+						b. Wah, pemiliknya lupa mengunci pintu tuh!
+					</label>
+			</div>
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="answer" id="c1" value="C_1">
+				<label class="form-check-label" for="c1">
+					c. Paling pemilik rumahnya ada di dalam, sedang menyapu di sekitar pintu masuk
+				</label>
+			</div>
+			</div>
+			<button type="submit" class="btn btn-primary mt-3">Jawab</button>
+		</form>
+
+		<div class="mt-4" id="result" style="display:none">
+			<h4>Hasil:</h4>
+			<p id="result-text"></p>
+			<a href="pertanyaan5.html" class="btn btn-primary mt-3" id="next-question" style="display:none">Lanjut</a>
+			</br>
+			<a href="pertanyaan3.html" class="btn btn-primary mt-4" id="prev-question" style="display:none">Sebelumnya</a>
+
+</div>
+
+		</div>
+	</div>
+
+<script>
+	$(document).ready(function() {
+		$('form').submit(function(event) {
+			event.preventDefault();
+			var answer = $('input[name=answer]:checked').val();
+			if (answer == 'A_1') {
+				$('#result-text').text('Jangan jangan rumah itu dirampok. menggambarkan anda orang yang tidak sempat panik karena sibuk mencari solusi.');
+			} else if (answer == 'B_1') {
+				$('#result-text').text('Wah, pemiliknya lupa mengunci pintu tuh!. menggambarkan anda orang yang sangat santai, bahkan dalam situasi genting');
+			} else if (answer == 'C_1') {
+				$('#result-text').text('Paling pemilik rumahnya ada di dalam, sedang menyapu sekitar pintu masuk. menggambarkan anda Orang yang walaupun terlihat santai tapi tidak pernah lengah');
+			} else if (answer == 'D_1') {
+				$('#result-text').text('Plastik sampah yang terikat rapi. orang orang yang melihat plastik sampah yang terikat rapi memiliki rasa penguasaan diri yang kuat. mungkin terlalu kuat, anda tidak suka memperlihatkan kelemahan atau mengeluh - harga diri anda tidak mrngijinkan anda. tapi membiarkan orang lain mengetahui apa yang sebenarnya anda rasakan bukanlah tanda orang lemah. jangan terlalu tegang dan biarkan udara keterbukaan masuk sebelum semua sampah membusuk dan berbau busuk');
+			}
+			$('#result').show();
+			$('#next-question').show();
+			$('#prev-question').show();
+		});
+	});
+</script>
+
+
+</body>
+</html>
