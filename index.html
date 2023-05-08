@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/js/bootstrap.bundle.min.js"></script>
+  <style>
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  background: linear-gradient(135deg, #0088cc, #3b5998, #dd4b39);
+  background-size: 400% 400%;
+  animation: gradient 15s ease-in-out infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 20px;
+  border: none;
+  padding: 20px 40px;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.btn:hover {
+  background-color: #0069d9;
+  cursor: pointer;
+}
+
+.btn i {
+  margin-right: 10px;
+}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="text-center">
+      <a href="pertanyaan.html" class="btn"><i class="bi bi-play-circle-fill"></i>Mulai Pertanyaan</a><br>
+	      <a href="pertanyaangambar.html" class="btn"><i class="bi bi-play-circle-fill"></i>Mulai Pertanyaan Gambar</a><br>
+      <a href="about.html" class="btn"><i class="bi bi-info-circle-fill"></i>Tentang</a><br>
+      <a href="#" class="btn"><i class="bi bi-share-fill"></i>Bagikan Aplikasi</a><br>
+      <a href="privacy-policy.html" class="btn"><i class="bi bi-shield-lock-fill"></i>Privacy Policy</a>
+    </div>
+  </div>
+</body>
+</html>
